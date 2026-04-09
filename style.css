@@ -1,0 +1,618 @@
+/* Import de la police Raleway depuis le dossier "fONT" */
+@font-face {
+  font-family: "Raleway";
+  src: url(./fONT/Raleway-VariableFont_wght.ttf) format("truetype");
+}
+/* injection couleur et font-family dans les variables CSS pour une utilisation facile et cohérente dans tout le projet */
+:root {
+  --primary-color: #0065fc;
+  --secondary-color: #deebff;
+  --tertiary-color: #f2f2f2;
+  --quaternary-color: #d9d9d9;
+  --font-family: "Raleway", sans-serif;
+}
+/* reset marges et padding pour tous les éléments, et définir box-sizing à border-box pour une gestion plus facile des dimensions */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* éléements de base du body, comme la police, la couleur de fond, les dimensions et les marges */
+body {
+  font-family: var(--font-family);
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  min-width: 320px;
+  font-size: 0.9em;
+}
+body a {
+  text-decoration: none;
+  color: #000;
+}
+body ul {
+  list-style: none;
+}
+/* mise en page de la barre de navigation, avec un affichage en flex pour aligner les éléments horizontalement, et des styles pour les liens et les éléments de menu */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  height: 76px;
+  margin-bottom: 30px;
+}
+nav img {
+  display: inline-block;
+  width: auto;
+  height: 19px;
+  margin: 30px 50px;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+nav a:hover {
+  color: var(--primary-color);
+  border-top: 3px solid var(--primary-color);
+  padding-top: 18px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Section titre principale */
+.mainTitle {
+  margin: 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* formulaire de recherche, avec des styles pour les boutons, les champs de saisie et les éléments de filtrage */
+.sectionSearch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 30px 0;
+  height: 49px;
+  width: 377px;
+}
+.btnLocation {
+  background-color: var(--tertiary-color);
+  color: black;
+  border: none;
+  height: 49px;
+  padding: 10px 10px;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+}
+.sectionSearch input {
+  height: 49px;
+  padding: 10px;
+  border: none;
+  /* width: 130px; */
+  font-weight: bold;
+  color: black;
+}
+.sectionSearch input::placeholder {
+  color: black;
+}
+.btnSearch {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  height: 49px;
+  padding: 10px 20px;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btnSearchMobile {
+  display: none;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  height: 49px;
+  padding: 10px 20px;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* mise en forme de la section de filtrage, avec des styles pour les titres et les boutons de filtrage */
+.sectionFilter span {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.filterBtn {
+  background-color: white;
+  color: black;
+  text-align: center;
+  border: 2px solid var(--quaternary-color);
+  height: 40px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.filterBtn:hover {
+  background-color: var(--secondary-color);
+  scale: 1.1;
+  transition: 0.2s ease;
+}
+
+.filterBtn i {
+  color: var(--primary-color);
+}
+.resultInfos {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+.resultInfos i {
+  color: var(--primary-color);
+  border: 1px solid var(--quaternary-color);
+  border-radius: 50%;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  padding-left: 13px;
+  margin-right: 15px;
+  padding-right: 15px;
+  font-size: 0.7rem;
+}
+/* mise en forme de la section de contenu principale, avec une disposition en flex pour aligner les éléments horizontalement et un espacement entre les différentes sections de contenu */
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 0 40px;
+}
+/* mise en forme de la section d'hébergement, avec des styles pour les conteneurs, les cartes d'hébergement et les éléments de contenu à l'intérieur des cartes */
+.hebergementContainer {
+  background-color: var(--tertiary-color);
+  border: none;
+  border-radius: 20px;
+  width: 70%;
+  padding: 20px 20px;
+}
+.hebergementContainer h2 {
+  padding-left: 40px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.hebergementCard {
+  width: 243px;
+  height: 207.25px;
+  border: 5px solid white;
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 15px 0px var(--quaternary-color);
+}
+/* ajout d'un effet de scale avec shadow et pointer sur le hover */
+.hebergementCard:hover {
+  box-shadow: 0px 11px 17px 6px gray;
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.3s ease;
+}
+
+.hebergementCard > a > img {
+  object-fit: cover;
+  width: 100%;
+  height: 125px;
+}
+
+.pictureCard {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+}
+.cardTitle {
+  margin-left: 10px;
+}
+
+.cardTitle h3 {
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.cardTitle p {
+  font-size: 0.6em;
+  margin-bottom: 5px;
+}
+.cardStars {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-size: 0.75em;
+}
+.emptyStar {
+  color: var(--quaternary-color);
+}
+.afficherPlus {
+  font-weight: bold;
+  padding-left: 40px;
+}
+/* mise en forme de la zone "les plus populaires" */
+.popularyContainer {
+  background-color: var(--tertiary-color);
+  border: none;
+  border-radius: 20px;
+  width: 30%;
+  max-height: 614px;
+}
+.popularyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+}
+.popularyHeader i {
+  color: var(--primary-color);
+}
+.popularyCardsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 30px;
+  width: 100%;
+  padding: 0 20px;
+}
+.popularyCard {
+  width: 100%;
+  height: 130px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px 0px var(--quaternary-color);
+}
+.popularyCard a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.popularyCard:hover {
+  box-shadow: 0px 11px 17px 6px gray;
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.3s ease;
+}
+
+.horizontalPicture {
+  width: 100px;
+  height: 100%;
+  object-fit: cover;
+  border: 5px solid white;
+  border-radius: 20px 0 0 20px;
+}
+#bleuBlancPicture {
+  height: 130px;
+  width: 140px;
+}
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+.popularyTitle {
+  font-size: 0.7em;
+}
+
+.popularyStars {
+  color: var(--primary-color);
+
+  font-size: 0.75em;
+}
+/* mise en forme de la zone Activité  */
+#activity {
+  margin: 70px 40px;
+}
+.activityCard {
+  width: 100%;
+
+  padding: 0 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.activityPicture a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity a > img {
+  object-fit: cover;
+  width: 100%;
+  height: 380px;
+  border-radius: 20px 20px 0 0;
+}
+#fortDePomegues {
+  object-position: center;
+}
+
+.activityPicture {
+  width: 297.5px;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 6px 11px 9px 0px var(--quaternary-color);
+  margin-top: 30px;
+  background-color: white;
+  padding-bottom: 50px;
+  object-fit: cover;
+}
+.activityPicture:hover {
+  box-shadow: 0px 11px 17px 6px gray;
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.3s ease;
+}
+.activityPicture h3 {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+/* mise en forme du pied de page */
+.footerContainer {
+  background-color: var(--tertiary-color);
+  border: none;
+  height: 150px;
+
+  margin: 50px 40px 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 250px;
+  padding: 0 20px;
+}
+.aPropos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hebergement {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.assistance {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footerContainer a {
+  font-size: 0.9em;
+}
+
+/* ________________________ Media Query --------------------------- */
+@media screen and (max-width: 1440px) {
+  body {
+    margin: 0 auto;
+  }
+  nav ul {
+    padding-right: 40px;
+  }
+
+  .activityCard {
+    padding: 0;
+    gap: 10px;
+  }
+  .footerContainer {
+    margin: 0 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 0 40px;
+  }
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .hebergementContainer {
+    flex-direction: row;
+    width: 100%;
+  }
+  .popularyContainer {
+    gap: 15px;
+    width: 100%;
+    height: 250px;
+  }
+  .popularyHeader {
+    display: block;
+  }
+  .popularyCardsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .popularyCard {
+    display: flex;
+    justify-content: space-around;
+  }
+  #coeurDeLeau {
+    margin-bottom: 50px;
+  }
+  .popularyStars {
+    display: flex;
+    flex-direction: row;
+  }
+  .activityCard {
+    height: 100%;
+    width: 100%;
+    gap: 30px;
+  }
+  .activityPicture {
+    height: 250px;
+  }
+  #fortDePomegues {
+    height: 180px;
+  }
+  .footerContainer {
+    gap: 150px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+  }
+  nav li {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  nav li:hover {
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  nav li:hover a {
+    color: var(--primary-color);
+  }
+
+  nav a:hover {
+    border-top: none;
+  }
+  .mainTitle {
+    max-width: 375px;
+    width: 100%;
+    margin: 30px auto;
+  }
+  .mainTitle h1,
+  .mainTitle p {
+    padding: 0 20px;
+  }
+
+  .sectionSearch {
+    margin: 20px auto;
+    width: 335px;
+  }
+  .sectionSearch input {
+    width: 100%;
+    min-width: 0;
+  }
+  .btnSearch {
+    display: none;
+  }
+  .btnSearchMobile {
+    display: block;
+    width: 49px;
+  }
+  .sectionFilter {
+    margin: 0 35px;
+  }
+
+  .sectionFilter span {
+    display: block;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-bottom: 10px;
+  }
+  .filterBtn {
+    margin: 10px 5px;
+    padding: 4px 19px;
+    height: 50px;
+  }
+  #familyIcon {
+    padding: auto;
+    width: 135.25px;
+  }
+  .resultInfos {
+    margin: 30px 10px;
+  }
+  .content {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+  .hebergementCard {
+    width: 335px;
+  }
+  .popularyContainer {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+  }
+  .popularyCardsContainer {
+    flex-direction: column;
+  }
+  .hebergementContainer {
+    max-height: none;
+  }
+  .activity {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .activity h2 {
+    padding-left: 20px;
+  }
+
+  .activityCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .activityPicture {
+    width: fit-content;
+  }
+  .activityPicture a {
+    width: 315px;
+    height: 200px;
+  }
+
+  #fortDePomegues {
+    height: 201px;
+  }
+  .footerContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    gap: 0;
+  }
+  .aPropos,
+  .hebergement,
+  .assistance {
+    width: 100%;
+    padding: 20px 20px;
+  }
+}
