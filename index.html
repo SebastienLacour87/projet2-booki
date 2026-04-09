@@ -18,7 +18,7 @@
   <body>
     <header>
       <nav>
-        <!-- navigation enhaut de page -->
+        <!-- navigation en haut de page -->
         <img src="./images/logo/Booki.png" alt="Logo Booki" />
         <ul>
           <li>
@@ -31,36 +31,45 @@
       </nav>
     </header>
     <main>
-      <h1>Trouver votre hébergement pour des vacances de rêve</h1>
-      <p>En plein centre-ville ou en pleine nature</p>
-      <form class="sectionSearch" action="#" method="get">
-        <!-- module de recherhce  -->
-        <button class="btnLocation" type="button">
-          <i class="fa-solid fa-location-dot"></i>
-        </button>
-        <input type="text" placeholder="Marseille, France" name="destination" />
-        <button class="btnSearch" type="submit">Rechercher</button>
-      </form>
-      <!-- section de filtes -->
-      <form class="sectionFilter">
-        <span>Filtres</span>
-        <button class="filterBtn" type="button">
-          <i class="fa-solid fa-money-bill-1-wave"></i> Économique
-        </button>
-        <button class="filterBtn" type="button">
-          <i class="fa-solid fa-person"></i> Familial
-        </button>
-        <button class="filterBtn" type="button">
-          <i class="fa-solid fa-heart"></i> Romantique
-        </button>
-        <button class="filterBtn" type="button">
-          <i class="fa-solid fa-fire"></i> Nos pépites
-        </button>
-      </form>
-      <p class="resultInfos">
-        <i class="fa-solid fa-info"></i>
-        Plus de 500 logements sont disponobles dans cette ville
-      </p>
+      <div class="mainTitle">
+        <h1>Trouver votre hébergement pour des vacances de rêve</h1>
+        <p>En plein centre-ville ou en pleine nature</p>
+        <form class="sectionSearch" action="#" method="get">
+          <!-- module de recherhce  -->
+          <button class="btnLocation" type="button">
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
+          <input
+            type="text"
+            placeholder="Marseille, France"
+            name="destination"
+          />
+          <button class="btnSearch" type="submit">Rechercher</button>
+          <button class="btnSearchMobile" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <!-- section de filtes -->
+        <div class="sectionFilter">
+          <span>Filtres</span>
+          <button class="filterBtn" type="button">
+            <i class="fa-solid fa-money-bill-1-wave"></i> Économique
+          </button>
+          <button class="filterBtn" id="familyIcon" type="button">
+            <i class="fa-solid fa-person"></i> Familial
+          </button>
+          <button class="filterBtn" type="button">
+            <i class="fa-solid fa-heart"></i> Romantique
+          </button>
+          <button class="filterBtn" type="button">
+            <i class="fa-solid fa-fire"></i> Nos pépites
+          </button>
+        </div>
+        <p class="resultInfos">
+          <i class="fa-solid fa-info"></i>
+          Plus de 500 logements sont disponobles dans cette ville
+        </p>
+      </div>
       <!-- conteneur main-->
       <section class="content">
         <article class="hebergementContainer" id="hebergementContainer">
