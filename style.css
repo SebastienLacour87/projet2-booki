@@ -171,6 +171,7 @@ h1 {
 .content {
   display: flex;
   flex-direction: row;
+  max-width: 1440px;
   gap: 30px;
   margin: 0 40px;
 }
@@ -179,27 +180,28 @@ h1 {
   background-color: var(--tertiary-color);
   border: none;
   border-radius: 20px;
-  width: 70%;
-  padding: 20px 20px;
+  width: 871px;
 }
 .hebergementContainer h2 {
+  padding-top: 30px;
   padding-left: 40px;
 }
 
 .cardContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 30px;
 }
 
 .hebergementCard {
-  width: 250px;
+  width: 250.33px;
   height: 207.25px;
   border: 5px solid white;
   border-radius: 20px;
   background-color: white;
-  margin-bottom: 20px;
   box-shadow: 5px 5px 15px 0px var(--quaternary-color);
 }
 /* ajout d'un effet de scale avec shadow et pointer sur le hover */
@@ -213,7 +215,7 @@ h1 {
 .hebergementCard > a > img {
   object-fit: cover;
   width: 100%;
-  height: 125px;
+  height: 124px;
 }
 
 .pictureCard {
@@ -245,8 +247,10 @@ h1 {
   color: var(--quaternary-color);
 }
 .afficherPlus {
+  display: inline-block;
   font-weight: bold;
   padding-left: 40px;
+  padding-bottom: 30px;
   font-size: 1.15rem;
 }
 /* mise en forme de la zone "les plus populaires" */
@@ -254,15 +258,15 @@ h1 {
   background-color: var(--tertiary-color);
   border: none;
   border-radius: 20px;
-  width: 30%;
-  max-height: 614px;
+  width: 439px;
+  min-height: 614px;
 }
 .popularyHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 20px;
+  gap: 30px;
+  padding: 30px 30px 0 30px;
 }
 .popularyHeader i {
   color: var(--primary-color);
@@ -271,13 +275,14 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   row-gap: 30px;
   width: 100%;
-  padding: 0 20px;
+  padding: 30px 30px;
 }
 .popularyCard {
-  width: 100%;
-  height: 130px;
+  width: 369px;
+  height: 146px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 5px 5px 15px 0px var(--quaternary-color);
@@ -287,6 +292,7 @@ h1 {
   height: 100%;
   width: 100%;
 }
+
 .popularyCard:hover {
   box-shadow: 0px 11px 17px 6px gray;
   cursor: pointer;
@@ -302,8 +308,7 @@ h1 {
   border-radius: 20px 0 0 20px;
 }
 #bleuBlancPicture {
-  height: 130px;
-  width: 140px;
+  height: fit-content;
 }
 .titleContainer {
   display: flex;
@@ -323,12 +328,14 @@ h1 {
   font-size: 0.75em;
 }
 /* mise en forme de la zone Activité  */
-#activity {
-  margin: 70px 40px;
+.activity {
+  margin: 30px;
+}
+.activity h2 {
+  padding-left: 40px;
 }
 .activityCard {
   width: 100%;
-
   padding: 0 20px;
   background-color: white;
   display: flex;
@@ -336,7 +343,6 @@ h1 {
   justify-content: space-around;
 }
 .activityPicture a {
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -354,7 +360,7 @@ h1 {
 
 .activityPicture {
   width: 297.5px;
-  height: 100%;
+  height: 439px;
   border-radius: 20px;
   box-shadow: 6px 11px 9px 0px var(--quaternary-color);
   margin-top: 30px;
@@ -429,6 +435,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    row-gap: 50px;
   }
   .hebergementContainer {
     flex-direction: row;
@@ -436,23 +443,31 @@ h1 {
   }
   .hebergementCard {
     width: 268px;
+    height: 207.25px;
+    margin-bottom: 20px;
   }
+  /* .afficherPlus {
+    padding-bottom: 10px;
+  } */
   .popularyContainer {
-    gap: 15px;
+    gap: 20px;
     width: 100%;
-    height: 250px;
+
+    min-height: 252px;
   }
   .popularyHeader {
-    display: block;
+    display: flex;
   }
   .popularyCardsContainer {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 20px;
   }
   .popularyCard {
     display: flex;
     justify-content: space-around;
+    width: 274.67px;
+    height: 146px;
   }
   #coeurDeLeau {
     margin-bottom: 50px;
@@ -461,17 +476,23 @@ h1 {
     display: flex;
     flex-direction: row;
   }
+  .activity {
+    height: 390.02px;
+  }
   .activityCard {
     height: 100%;
     width: 100%;
     gap: 30px;
   }
   .activityPicture {
-    height: 250px;
+    height: 270px;
+    width: 193.5px;
   }
-  #fortDePomegues {
-    height: 180px;
+  .activityPicture a > img {
+    height: 200px;
+    width: 193.5px;
   }
+
   .footerContainer {
     gap: 150px;
   }
@@ -561,26 +582,45 @@ h1 {
   .content {
     flex-direction: column-reverse;
     height: 100%;
+    row-gap: 0;
   }
   .hebergementContainer {
     background-color: white;
   }
   .hebergementContainer h2 {
-    padding: 0;
+    padding-left: 20px;
+  }
+  .cardContainer {
+    padding: 0 20px 20px 20px;
+    gap: 15px;
   }
   .hebergementCard {
     width: 335px;
   }
+  .hebergementCard a {
+    width: 100%;
+  }
+
   .afficherPlus {
-    padding: 0;
+    padding-left: 20px;
   }
   .popularyContainer {
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 569px;
+    gap: 0;
+    padding: 20px 20px;
+    border-radius: 0;
+  }
+  .popularyHeader {
+    padding: 0;
   }
   .popularyCardsContainer {
     flex-direction: column;
+    padding: 10px 20px 20px 20px;
+  }
+  .popularyCard {
+    width: 335px;
   }
   .hebergementContainer {
     max-height: none;
@@ -589,6 +629,7 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 100%;
+    margin: 0;
   }
 
   .activityCard {
@@ -597,6 +638,8 @@ h1 {
     align-items: center;
     width: 100%;
     height: 100%;
+    gap: 0;
+    margin-bottom: 30px;
   }
   .activityPicture {
     width: 315px;
@@ -610,18 +653,22 @@ h1 {
   #fortDePomegues {
     height: 141px;
   }
+
   .footerContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    margin: 0;
+    margin: 30px 0 0 0;
     gap: 0;
   }
   .aPropos,
   .hebergement,
   .assistance {
     width: 100%;
-    padding: 20px 20px;
+    padding: 30px 30px;
+  }
+  .footerContainer a {
+    font-size: 1rem;
   }
 }
